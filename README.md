@@ -10,7 +10,6 @@
        19th of March, 2024.
 
 	Introduction: 
-![Screenshot 2024-03-22 220046](https://github.com/sakshit2004/FOOD-WASTE-REDUCTION-PLATFORM/assets/136215286/4130ba3f-b08d-4b9c-8e6c-2cf7bebaccad)
 
  Welcome to the documentation for the Food Waste Reduction Platform (FWRP), a comprehensive solution aimed at addressing the global issue of food waste. This document provides an overview of the system architecture, design, and functionality for stakeholders involved in its development and deployment.  
 The FWRP serves as a vital tool in promoting sustainability, reducing hunger, and building more resilient food ecosystems by facilitating the efficient redistribution of surplus food items. Key features include user registration and authentication, inventory management for retailers, surplus food identification and listing, claiming surplus food by charitable organizations, purchasing surplus food by consumers, surplus food alerts for users, and additional bonus functionality.  
@@ -73,50 +72,48 @@ This architecture separates concerns and promotes modularity, scalability, and m
 	Business Architecture: 
 
 1.	The Registration Use- Case: 
-
 This use case facilitates the creation of user accounts on the platform, enabling individuals to access its features and functionalities. This functionality encompasses the processes of registration and authentication, ensuring secure and personalized user experiences tailored to the needs of different user types: retailers, consumers, and charitable organizations. The "Registration" functionality serves as the gateway for individuals to join the platform and engage with its features. By streamlining the registration and authentication processes, the platform ensures a seamless onboarding experience for users while maintaining the security and integrity of user accounts and information. Additionally, the ability to select user types during registration enables the platform to tailor the user experience and provide relevant functionalities based on the user's role and preferences.
-
+![Screenshot 2024-04-01 173837](https://github.com/sakshit2004/FOOD-WASTE-REDUCTION-PLATFORM/assets/136215286/b5053b08-85b7-47fb-885f-1967cd83e294)
    Fig.01
 
 2.	The Retailers Use-Case:
 
 The "Retailers" functionality empowers retailers to effectively manage their inventory, identify surplus food items, and facilitate their redistribution for donation or sale on the platform. By providing robust inventory management tools and mechanisms for surplus food identification and listing, the platform enables retailers to mitigate food waste, promote sustainability, and contribute to efforts addressing hunger and food insecurity.
-   
-   
-
-
-
+![Screenshot 2024-04-01 174155](https://github.com/sakshit2004/FOOD-WASTE-REDUCTION-PLATFORM/assets/136215286/22f91e94-668e-4f4a-aad5-e24a1f8d88a6)
  Fig.02
 
 3.	 Charitable Organization Use Cases:
 
 	The Charity food claim system:
    The Charity Food Claim System is designed to facilitate the donation process between food retailers and charitable organizations, aiming to reduce food waste and support those in need. The use case diagram outlines the primary functionalities and interactions within the system. It provides a visual representation of the functionalities and interactions within the Charity Food Claim System. It outlines the steps involved in listing surplus food items, claiming those items by charitable organizations, and updating the retailer's inventory accordingly. This system aims to streamline the process of food donation, promoting efficiency and reducing food waste.
-
+![Screenshot 2024-04-01 174301](https://github.com/sakshit2004/FOOD-WASTE-REDUCTION-PLATFORM/assets/136215286/a830167a-543c-45bc-8865-0a829a5ba97b)
   Fig.03
 	Purchase and Inventory Updates: 
  The use case diagram illustrates the interaction between consumers and retailers within the Food Waste Reduction Platform. The main actors involved are Consumers, representing users browsing and purchasing food items, and Retailers, representing users managing their inventory of food items.The first use case, 'Purchase,' allows Consumers to browse and select food items listed by Retailers on the platform.
 
 Upon successful 'purchase' by a Consumer, the system triggers the 'Update Inventory' use case. This ensures that the Retailer's inventory is automatically updated to reflect the change in stock availability, maintaining accuracy and consistency in inventory management.
-
+![Screenshot 2024-04-01 174348](https://github.com/sakshit2004/FOOD-WASTE-REDUCTION-PLATFORM/assets/136215286/056730c9-ac81-4b5d-bf7e-8c7b7a499725)
  Fig.04
 
 	The Surplus Food Alert Use-Case: 
 The "Surplus Food Alert" functionality enables users to subscribe to receive notifications about surplus food items available on the platform based on their location, communication method, and food preferences. Users receive automatic notifications whenever retailers list surplus food items, facilitating timely access to opportunities for acquiring surplus food. The "Surplus Food Alert" functionality serves to enhance user engagement and participation on the platform by providing timely notifications about surplus food items based on user preferences. 
+![image](https://github.com/sakshit2004/FOOD-WASTE-REDUCTION-PLATFORM/assets/136215286/0a008e15-a8ab-4881-bafe-f37fdbda9c2e)
  Fig.05 
 
 
 	The Feedback Use-Case: 
 
 The "Surplus Food Transaction Feedback" use case diagram outlines the functionalities related to allowing consumers to provide feedback and ratings for their experiences with surplus food transactions on the platform. 
+![Screenshot 2024-04-01 174524](https://github.com/sakshit2004/FOOD-WASTE-REDUCTION-PLATFORM/assets/136215286/d5dc83ec-732e-4b8c-bba4-d6d8b7b6a478)
    Fig.06
 	Detailed Design: 
 
 	UML Class Diagrams: 
-
+![Screenshot 2024-04-01 174622](https://github.com/sakshit2004/FOOD-WASTE-REDUCTION-PLATFORM/assets/136215286/e5f2670d-0c77-49b8-a955-e54e52cb5d53)
  Fig.07
 
 	Component Diagrams: 
+![Screenshot 2024-04-01 174712](https://github.com/sakshit2004/FOOD-WASTE-REDUCTION-PLATFORM/assets/136215286/5775099b-bfb5-459b-818f-695bed2957b4)
  Fig.08
 
 	Description:
@@ -221,9 +218,11 @@ feedback_id (Primary Key)
 comments
 	Description: This setup allows consumers to provide feedback and ratings for their experiences with surplus food transactions. The Feedback Table records the feedback provided by consumers, including the rating given and any additional comments. The relationship with the Consumers Table ensures that each feedback entry is linked to the respective consumer who provided it, facilitating transparency and accountability within the platform.
                                                        ERD Diagram:
+ ![Screenshot 2024-04-01 174820](https://github.com/sakshit2004/FOOD-WASTE-REDUCTION-PLATFORM/assets/136215286/b0e94f90-74bb-4302-aab5-c3a6a93724c7)
   Fig.09
 
                           Physical Diagram:
+   	 ![Screenshot 2024-04-01 174949](https://github.com/sakshit2004/FOOD-WASTE-REDUCTION-PLATFORM/assets/136215286/f71bf003-8173-4348-92fe-9a30e2415493)
    Fig.10
 	Security Architecture:
 
