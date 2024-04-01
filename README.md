@@ -10,6 +10,7 @@
        19th of March, 2024.
 
 	Introduction: 
+![Screenshot 2024-03-22 220046](https://github.com/sakshit2004/FOOD-WASTE-REDUCTION-PLATFORM/assets/136215286/4130ba3f-b08d-4b9c-8e6c-2cf7bebaccad)
 
  Welcome to the documentation for the Food Waste Reduction Platform (FWRP), a comprehensive solution aimed at addressing the global issue of food waste. This document provides an overview of the system architecture, design, and functionality for stakeholders involved in its development and deployment.  
 The FWRP serves as a vital tool in promoting sustainability, reducing hunger, and building more resilient food ecosystems by facilitating the efficient redistribution of surplus food items. Key features include user registration and authentication, inventory management for retailers, surplus food identification and listing, claiming surplus food by charitable organizations, purchasing surplus food by consumers, surplus food alerts for users, and additional bonus functionality.  
