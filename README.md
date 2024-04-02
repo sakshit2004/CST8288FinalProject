@@ -2,7 +2,7 @@
        
 •	Version: 01
 •	Authors: 
-          Srishti Srishti
+         @SRISHTI-052
          Astha Pundir
        Arshpreet Singh
       Sakshit Sharma
