@@ -1,4 +1,4 @@
-	Version History:
+<h1>Version History:</h1>
        
 •	Version: 01
 •	Authors: 
@@ -9,7 +9,7 @@
 •	Date: 
        19th of March, 2024.
 
-	Introduction: 
+<h1>Introduction: </h1>	
 
  Welcome to the documentation for the Food Waste Reduction Platform (FWRP), a comprehensive solution aimed at addressing the global issue of food waste. This document provides an overview of the system architecture, design, and functionality for stakeholders involved in its development and deployment.  
 The FWRP serves as a vital tool in promoting sustainability, reducing hunger, and building more resilient food ecosystems by facilitating the efficient redistribution of surplus food items. Key features include user registration and authentication, inventory management for retailers, surplus food identification and listing, claiming surplus food by charitable organizations, purchasing surplus food by consumers, surplus food alerts for users, and additional bonus functionality.  
@@ -22,12 +22,11 @@ Overall, the Food Waste Reduction Platform represents a collaborative effort to 
 
 
 
-	Targeted Audience: 
+<h1>Targeted Audience: </h1>
 .  
       This document caters to various stakeholders involved in the development and deployment of the Food Waste Reduction Platform (FWRP). Project managers rely on comprehensive insights into the system's architecture and functionalities to effectively coordinate and manage the project. Developers need detailed technical specifications to guide their implementation efforts accurately. Database administrators require insights into the database architecture and schema to ensure efficient data management. Quality assurance personnel rely on clear documentation of functional requirements and testing methodologies to conduct thorough testing and ensure the system's reliability.
 
-	Scope: 
-
+<h1>	Scope: </h1>
 In Scope:
 1.	Detailed documentation of the Food Waste Reduction Platform (FWRP), including its architecture, design, and functionality.
 2.	Description of the targeted audience, including project managers, developers, database administrators, and quality assurance personnel.
@@ -38,7 +37,7 @@ In Scope:
 7.	Deployment architecture, discussing infrastructure setup, deployment strategy (cloud-based and on-premises), and scalability considerations.
 8.	Testing methodologies including unit testing, API testing, and integration testing.
 
-Out of Scope:
+<h3> Out of Scope:</h3>
 1.	Legal or regulatory compliance considerations beyond basic security measures
 2.	Marketing strategies or user adoption plans.
 3.	Detailed financial analysis or cost projections related to deployment.
@@ -48,7 +47,7 @@ Out of Scope:
 Overall, this document focuses on providing a comprehensive understanding of the Food Waste Reduction Platform's architecture, design, and functionality, catering to stakeholders involved in its development and deployment. It does not delve into operational or post-deployment aspects but rather focuses on the foundational elements necessary for successful implementation.
 
 
-	Application Architecture: 
+<h1>Application Architecture:</h1>
 
    The Food Waste Reduction Platform (FWRP) is structured based on a 3-tier architecture:
 
@@ -69,7 +68,7 @@ Overall, this document focuses on providing a comprehensive understanding of the
 
 This architecture separates concerns and promotes modularity, scalability, and maintainability of the FWRP application. The presentation layer focuses on user interaction, the business layer encapsulates application logic, and the database layer handles data storage and retrieval. This structured approach enables easier development, testing, and maintenance of the application components.
 
-	Business Architecture: 
+	<h1>Business Architecture: </h1>
 
 1.	The Registration Use- Case: 
 This use case facilitates the creation of user accounts on the platform, enabling individuals to access its features and functionalities. This functionality encompasses the processes of registration and authentication, ensuring secure and personalized user experiences tailored to the needs of different user types: retailers, consumers, and charitable organizations. The "Registration" functionality serves as the gateway for individuals to join the platform and engage with its features. By streamlining the registration and authentication processes, the platform ensures a seamless onboarding experience for users while maintaining the security and integrity of user accounts and information. Additionally, the ability to select user types during registration enables the platform to tailor the user experience and provide relevant functionalities based on the user's role and preferences.
@@ -106,7 +105,7 @@ The "Surplus Food Alert" functionality enables users to subscribe to receive not
 The "Surplus Food Transaction Feedback" use case diagram outlines the functionalities related to allowing consumers to provide feedback and ratings for their experiences with surplus food transactions on the platform. 
 ![Screenshot 2024-04-01 174524](https://github.com/sakshit2004/FOOD-WASTE-REDUCTION-PLATFORM/assets/136215286/d5dc83ec-732e-4b8c-bba4-d6d8b7b6a478)
    Fig.06
-	Detailed Design: 
+<h1>	Detailed Design: </h1>
 
 	UML Class Diagrams: 
 ![Screenshot 2024-04-01 174622](https://github.com/sakshit2004/FOOD-WASTE-REDUCTION-PLATFORM/assets/136215286/e5f2670d-0c77-49b8-a955-e54e52cb5d53)
@@ -140,7 +139,7 @@ The "Surplus Food Transaction Feedback" use case diagram outlines the functional
 	User: Represents a user interface with methods to subscribe.
 	Authenticate: Represents an authenticate interface with methods to set and verify.
 
-	Data Architecture:
+<h1>	Data Architecture:  </h1>
                                      Database Architecture:
 1.	User Table:
 	Fields:
@@ -224,7 +223,7 @@ comments
                           Physical Diagram:
    	 ![Screenshot 2024-04-01 174949](https://github.com/sakshit2004/FOOD-WASTE-REDUCTION-PLATFORM/assets/136215286/f71bf003-8173-4348-92fe-9a30e2415493)
    Fig.10
-	Security Architecture:
+<h1>Security Architecture:</h1>
 
 The security architecture of the Food Waste Reduction Platform (FWRP) prioritizes the protection of user data and system integrity. Key considerations include:
 a.	User Authentication:
@@ -240,7 +239,7 @@ Implementation of input validation and sanitization techniques to prevent common
 Adoption of parameterized queries and prepared statements to mitigate SQL injection risks.
 Implementation of access controls and least privilege principles to restrict access to sensitive data and prevent unauthorized data modification or deletion.
 
-	 Deployment Architecture: 
+<h1> Deployment Architecture: </h1>
    The deployment architecture of the Food Waste Reduction Platform (FWRP) encompasses various facets, including infrastructure setup, deployment strategy, and scalability considerations. This section displays the key components of the deployment model, shedding light on the infrastructure, deployment strategy, and scalability measures adopted by the FWRP.
 
 Infrastructure Setup
@@ -272,7 +271,7 @@ FWRP implements vertical scalability to boost individual server performance, upg
 Auto-Scaling:
 FWRP utilizes auto-scaling mechanisms to adjust server instances or containers dynamically, ensuring optimal performance and resource efficiency. This minimizes wastage and costs while adapting to fluctuating traffic patterns seamlessly.
 
-	Testing Module: 
+Testing Module: 
 Unit Testing
 Unit testing in the Food Waste Reduction Platform (FWRP) employs JUnit for Java applications to validate the functionality of individual classes and methods in isolation. Each class and method, such as those within SubscriberDAO, InventoryManagerDAO, and UserAuthenticationDAO, undergoes rigorous testing to ensure they interact with the database as expected. Through unit testing, potential issues and bugs are identified early, ensuring the reliability and correctness of each component.
 Integration Testing
@@ -281,7 +280,7 @@ API Testing
 If the FWRP exposes a RESTful API or similar interfaces, API testing becomes crucial. Tools like Postman or automated frameworks like REST-assured are utilized for API testing. This ensures that API endpoints perform as expected, handle requests and responses correctly, and adhere to specified requirements. By conducting API testing, the FWRP ensures the robustness and reliability of its external interfaces, enhancing interoperability and usability.
 
 
-	References: 
+<h1>References: </h1>
 1.	Gamma, E., Helm, R., Johnson, R., & Vlissides, J. (1994). Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley. https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612
 
 2.	Fowler, M. (2002). Patterns of Enterprise Application Architecture. Addison-Wesley Professional. https://www.amazon.com/Patterns-Enterprise-Application-Architecture-Martin/dp/0321127420
@@ -295,7 +294,7 @@ If the FWRP exposes a RESTful API or similar interfaces, API testing becomes cru
 5.	MySQL. (n.d.). The world's most popular open-source database. https://www.mysql.com/
 
 
-	Abbreviation:
+<h1>Abbreviation:</h1>
 1.	FWRP: Food Waste Reduction Platform
 2.	UI: User Interface
 3.	MVC: Model-View-Controller
