@@ -80,7 +80,16 @@
             width: 100%;
             font-size: 16px;
         }
-       
+        .logout-btn {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #ff0000;
+        }
+        .logout-btn:hover {
+            background-color: #ff6666;
+        }
     </style>
 </head>
 <body>
@@ -92,6 +101,7 @@
                 <li class="navitem"><a href="./RetailerFirst.jsp">Retailer</a></li>
                 <li class="navitem"><a class="active" href="./ConsumerPurchase.jsp">Consumer</a></li>
                 <li class="navitem"><a href="./CharitableFirst.jsp">Charitable Organization</a></li>
+                <li class="navitem"><a class="logout-btn" href="./login.jsp">Logout</a></li>
             </ul>
         </nav>
     </header>
