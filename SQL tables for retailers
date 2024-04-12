@@ -1,0 +1,16 @@
+CREATE TABLE INVENTORY (
+    Inventory_ID INT AUTO_INCREMENT PRIMARY KEY,
+    Retailer_ID INT NOT NULL,
+    Item_Type VARCHAR(64),
+    Name VARCHAR(255),
+    Expiration_Date DATE NOT NULL,
+    Quantity INT NOT NULL,
+    Discounted_Price DECIMAL(10,2) NOT NULL,
+    Surplus BOOLEAN NOT NULL,
+    FOREIGN KEY (Retailer_ID) REFERENCES RETAILERS(Retailer_ID)
+);CREATE TABLE RETAILERS (
+    Retailer_ID INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) UNIQUE,
+    name VARCHAR(255),
+    password VARCHAR(255)
+);
