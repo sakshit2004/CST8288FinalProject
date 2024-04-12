@@ -1,0 +1,84 @@
+package com.FWRP.test;
+
+import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
+
+import java.io.PrintWriter;
+import java.io.StringWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import com.FWRP.RegisterServlet;
+
+public class RegisterServletTest {
+
+    private HttpServletRequest request;
+    private HttpServletResponse response;
+    private RequestDispatcher dispatcher;
+    private StringWriter stringWriter;
+    private PrintWriter writer;
+    private RegisterServlet servlet;
+
+    @Before
+    public void setup() throws Exception {
+        request = mock(HttpServletRequest.class);
+        response = mock(HttpServletResponse.class);
+        dispatcher = mock(RequestDispatcher.class);
+        
+        stringWriter = new StringWriter();
+        writer = new PrintWriter(stringWriter);
+        
+        when(response.getWriter()).thenReturn(writer);
+        when(request.getRequestDispatcher(anyString())).thenReturn(dispatcher);
+        
+        servlet = new RegisterServlet();
+    }
+
+    @Test
+    public void testDoPost_Success() throws Exception {
+        // Set up request parameters
+        when(request.getParameter("name1")).thenReturn("TestUser");
+        when(request.getParameter("email1")).thenReturn("test@example.com");
+        when(request.getParameter("pass1")).thenReturn("password");
+        when(request.getParameter("Type1")).thenReturn("User");
+        
+        // Call doPost method
+        servlet.doPost(request, response);
+        
+        // Verify response content
+        writer.flush();
+        assertTrue(stringWriter.toString().contains("User Registered Successfully"));
+        
+        // Verify dispatching to register.jsp
+        verify(request).getRequestDispatcher("/register.jsp");
+        verify(dispatcher).include(request, response);
+    }
+
+    @Test
+    public void testDoPost_Failure() throws Exception {
+        // Set up request parameters
+        when(request.getParameter("name1")).thenReturn("TestUser");
+        when(request.getParameter("email1")).thenReturn("test@example.com");
+        when(request.getParameter("pass1")).thenReturn("password");
+        when(request.getParameter("Type1")).thenReturn("User");
+        
+        // Mock database failure
+        doThrow(new RuntimeException("Database connection failed")).when(request).getRequestDispatcher("/register.jsp");
+        
+        // Call doPost method
+        servlet.doPost(request, response);
+        
+        // Verify response content
+        writer.flush();
+        assertTrue(stringWriter.toString().contains("User not Registered"));
+        
+        // Verify dispatching to register.jsp
+        verify(request).getRequestDispatcher("/register.jsp");
+        verify(dispatcher).include(request, response);
+    }
+}
