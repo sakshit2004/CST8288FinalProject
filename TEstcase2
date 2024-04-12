@@ -1,0 +1,61 @@
+import static org.junit.Assert.*;
+
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class LoginJspTest {
+
+    private static WebDriver driver;
+
+
+    @AfterClass
+    public static void tearDown() {
+       
+        driver.quit();
+    }
+
+    @Test
+    public void testLogin_Success() {
+        // Open the login.jsp page
+        driver.get("http://localhost:8080/your-web-app/login.jsp");
+
+        // Find the email and password input fields and fill them in
+        WebElement emailInput = driver.findElement(By.name("email1"));
+        WebElement passwordInput = driver.findElement(By.name("pass1"));
+
+        emailInput.sendKeys("test@example.com");
+        passwordInput.sendKeys("password");
+
+        // Submit the form
+        WebElement submitButton = driver.findElement(By.cssSelector("input[type='submit']"));
+        submitButton.click();
+
+        // Verify that the user is redirected to the expected page
+        assertTrue(driver.getCurrentUrl().contains("/success.jsp"));
+    }
+
+    @Test
+    public void testLogin_Failure() {
+        // Open the login.jsp page
+        driver.get("http://localhost:8080/your-web-app/login.jsp");
+
+        // Find the email and password input fields and fill them in
+        WebElement emailInput = driver.findElement(By.name("email1"));
+        WebElement passwordInput = driver.findElement(By.name("pass1"));
+
+        emailInput.sendKeys("invalid@example.com");
+        passwordInput.sendKeys("invalidpassword");
+
+        // Submit the form
+        WebElement submitButton = driver.findElement(By.cssSelector("input[type='submit']"));
+        submitButton.click();
+
+        // Verify that the user remains on the login page
+        assertEquals("http://localhost:8080/your-web-app/login.jsp", driver.getCurrentUrl());
+    }
+}
