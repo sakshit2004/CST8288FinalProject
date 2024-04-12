@@ -1,5 +1,9 @@
 <%@ page import="java.util.List" %>
 
+<%@ page import="com.FWRP.inventoryDAO" %>
+<%@ page import="com.FWRP.inventoryDaoImpl" %>
+<%@ page import="com.FWRP.inventory" %>
+
 
 <%
     // Get the inventory ID from the request parameters
