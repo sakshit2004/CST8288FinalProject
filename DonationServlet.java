@@ -1,3 +1,8 @@
+/**
+Author srishti
+Due date 12-04-12
+*/
+
 package CharitableOrganisation;
 
 import jakarta.servlet.ServletException;
@@ -16,11 +21,15 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 
 
-
+/**
+ * Servlet implementation class DonationServlet
+ */
 @WebServlet("/DonationServlet")
 public class DonationServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-
+ /**
+     * @see HttpServlet#doPost(HttpServletRequest, HttpServletResponse)
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     	
