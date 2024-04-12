@@ -10,7 +10,6 @@ body {
     background-color: #232f3e; 
 }
 
-
 .container {
     max-width: 600px;
     margin: 0 auto;
@@ -37,7 +36,7 @@ label {
 }
 
 input[type="text"], textarea, .dropdown {
-    width: 100%;
+    width: calc(100% - 22px); /* Adjusted width to match user type dropdown */
     padding: 10px;
     font-size: 16px;
     border-radius: 4px;
@@ -51,7 +50,8 @@ textarea {
 }
 
 .btn-submit {
-    display: inline-block;
+    display: block; /* Change to block level */
+    margin: 0 auto; /* Center align */
     padding: 10px 20px;
     font-size: 16px;
     color: #fff;
@@ -72,14 +72,88 @@ textarea {
     color: #007185;
 }
 
+/* Navigation bar styles */
+header {
+    background-color: #232f3e;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+#title {
+    margin: 0;
+    flex-grow: 1; 
+}
+
+nav {
+    background-color: #232f3e; 
+    padding: 10px;
+    margin-right: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navitem {
+    display: inline;
+    margin-right: 20px;
+}
+
+.navitem a {
+    text-decoration: none;
+    color: #fff; 
+}
+
+.navitem a.active {
+    font-weight: bold;
+}
+.logout-btn {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #ff0000;
+        }
+ .logout-btn:hover {
+            background-color: #ff6666;
+        }
 </style>
 </head>
 <body>
+
+<header>
+    <h1 id="title">Feedback Form</h1>
+    <nav>
+        <ul id="navbar">
+            <li class="navitem"><a href="./HomePage.jsp">Home</a></li>
+            <li class="navitem"><a href="./ConsumerFirst.jsp">Consumer</a></li>
+            <li class="navitem"><a href="./RetailerFirst.jsp">Retailer</a></li>
+            
+            <li class="navitem"><a href="./CharitableFirst.jsp">Charitable Organization</a></li>
+            <li class="navitem"><a class="active">Feedback Form</a></li>
+            <li class="navitem"><a class="logout-btn" href="./login.jsp">Logout</a></li>
+        </ul>
+    </nav>
+</header>
 
 <div class="container">
     <h2>Feedback Form</h2>
     
     <form action="SubmitFeedbackServlet" method="post" onsubmit="return validateForm()">
+        <div class="form-group">
+            <label for="userType">User Type:</label>
+            <select id="userType" name="userType" class="dropdown" required>
+                <option value="">Select User Type</option>
+                <option value="retailer">Retailer</option>
+                <option value="charitable">Charitable Organization</option>
+                <option value="consumer">Consumer</option>
+            </select>
+        </div>
         <div class="form-group">
             <label for="personName">Your Name:</label>
             <input type="text" id="personName" name="personName" required>
