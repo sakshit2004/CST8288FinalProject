@@ -94,16 +94,7 @@
                 <td><%= inventory.getQuantity() %></td>
                 <td><%= inventory.getDiscountedPrice() %></td>
                 <td><%= inventory.isSurplus() ? "Yes" : "No" %></td>
-                <td>
-                    <form action="update_inventory" method="post">
-                        <input type="hidden" name="inventoryId" value="<%= inventory.getInventoryId() %>">
-                        <button type="submit">Update</button>
-                    </form>
-                    <form action="delete_inventory" method="post">
-                        <input type="hidden" name="inventoryId" value="<%= inventory.getInventoryId() %>">
-                        <button type="submit">Delete</button>
-                    </form>
-                </td>
+               
             </tr>
         <% } %>
     </table>
