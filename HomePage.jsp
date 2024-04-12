@@ -10,6 +10,7 @@
   body {
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
+    background-image: url('C:\Users\saksh\OneDrive\Desktop\FWR.jpg'); 
     margin: 0;
     padding: 0;
 }
