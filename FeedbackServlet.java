@@ -43,7 +43,12 @@ public class FeedbackServlet extends HttpServlet {
             if (count > 0) {
                 HttpSession session = req.getSession();
                 session.setAttribute("successMessage", "Feedback Submitted Successfully");
-                resp.sendRedirect(req.getContextPath() + "/FeedbackConsumer.jsp");
+                
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('Feedback Form submitted successfully');");
+                out.println("window.location.href='" + req.getContextPath() + "/FeedbackConsumer.jsp';");
+                out.println("</script>");
+                
             } else {
                 resp.sendRedirect(req.getContextPath() + "/FeedbackConsumer.jsp");
                 out.print("<h3 style='color:red'> Feedback not Submitted </h3>");
