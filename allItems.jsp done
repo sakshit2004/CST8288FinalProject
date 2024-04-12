@@ -1,0 +1,56 @@
+<%@ page import="java.util.List" %>
+<%@ page import="servletsDao.inventoryDAO" %>
+
+
+<%@ page import="servletsDao.inventoryDaoImpl" %>
+<%@ page import="servletsDao.inventory" %>
+<%
+// Get the InventoryDAO instance
+    inventoryDAO inventoryDAO = new inventoryDaoImpl();
+
+    // Get the list of surplus inventory items
+    List<servletsDao.inventory> allItemsList = inventoryDAO.getAllItems();
+%>
+
+<h1> Inventory</h1>
+
+<table>
+    <tr>
+        <th>ID:</th>
+        <th>Retailer ID:</th>
+        <th>Item Type:</th>
+        <th>Name:</th>
+        <th>Expiration Date:</th>
+        <th>Quantity:</th>
+        <th>Discounted Price:</th>
+        <th>Surplus:</th>
+        <th>Action:</th>
+    </tr>
+    <%
+    for (servletsDao.inventory inventory : allItemsList) {
+    %>
+        <tr>
+            <td><%= inventory.getInventoryId() %></td>
+            <td><%= inventory.getRetailerId() %></td>
+            <td><%= inventory.getItemType() %></td>
+            <td><%= inventory.getName() %></td>
+            <td><%= inventory.getExpirationDate() %></td>
+            <td><%= inventory.getQuantity() %></td>
+            <td><%= inventory.getDiscountedPrice() %></td>
+            <td>
+                <form action="update_inventory" method="post">
+                    <input type="hidden" name="inventoryId" value="<%= inventory.getInventoryId() %>">
+                    <button type="submit">Update</button>
+                </form>
+                <form action="delete_inventory" method="post">
+                    <input type="hidden" name="inventoryId" value="<%= inventory.getInventoryId() %>">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+    <% } %>
+</table>
+
+<form action="add_inventory" method="post">
+    <button type="submit">Add Surplus Inventory</button>
+</form>
