@@ -61,6 +61,6 @@ public class PurchaseServlet extends HttpServlet {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-        }
-    }
+        }
+    }
 }
