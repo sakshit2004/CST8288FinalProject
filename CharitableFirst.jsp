@@ -93,6 +93,9 @@
         </ul>
     </nav>
 </header>
+/**
+ * HTML page for the Charitable Organization section of the Food Waste Reduction Platform.
+ */
 <h2>Hello Charitable Organisation. Welcome</h2><br>
 <div class="buttonstwo">
     <a href="Donation.jsp" class="item">Food for Donation</a>
