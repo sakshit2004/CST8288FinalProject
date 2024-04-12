@@ -13,10 +13,16 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+/**
+ * Servlet implementation class PurchaseServlet
+ * This servlet handles the purchase of items and updates the inventory database accordingly.
+ */
 @WebServlet("/PurchaseServlet")
 public class PurchaseServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-
+ /**
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
