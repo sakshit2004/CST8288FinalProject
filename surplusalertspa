@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Subscribe to Surplus Food Alerts</title>
+</head>
+<body>
+    <h1>Subscribe to Surplus Food Alerts</h1>
+    <form action="SubscriptionServlet" method="post">
+        Location: <input type="text" name="location"><br>
+        Communication Method:
+        <select name="communicationMethod">
+            <option value="email">Email</option>
+            <option value="phone">Phone</option>
+        </select><br>
+        Food Preferences: <input type="text" name="foodPreferences"><br>
+        <input type="submit" value="Subscribe">
+    </form>
+</body>
+</html>
